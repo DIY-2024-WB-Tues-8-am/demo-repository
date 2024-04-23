@@ -57,6 +57,13 @@ The following code has been developed by students and/or researchers of the Fres
         malignant_count = malignant_count + 1;
          }
 
+	function showResults(){
+         var bPercent = Math.round((benign_count/5) * 100)  <!-- Calculates allergy count and divides by total 	questions and rounds to the nearest percent for simplicity -->
+	 var mPercent = Math.round((malignant_count/5) * 100)  <!-- Calculates cold count and divides by total questions and rounds to the nearest percent for simplicity -->
+         var resultText = document.getElementById("userResults") <!-- Instantiates a variable that stores userResults which is created with the next line -->
+         resultText.innerHTML = "Probability it is benign mole is = " + bPercent + "%" + "<br> Probability it is a malignant mole is = " + mPercent + "%" <!-- Stores percentages into html text to display upon user click -->
+	}
+
  function detectVerticalSquash(img) {
   var iw = img.naturalWidth, ih = img.naturalHeight;
   var canvas = document.createElement('canvas');
@@ -233,6 +240,18 @@ The following code has been developed by students and/or researchers of the Fres
                 <a href="#results" onclick="benignAdd();" class="w3-btn w3-black"> No</a>
  		</div>
 	</div>
+
+	<div class="page" id="results">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results!</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+         <p>You have reached the end of the survey!</p>
+	 <p>Click below for your results.</p>  <!-- Closing remarks to user -->
+	 <a class="w3-btn w3-green w3-round" onclick="showResults();"> Display Results </a>  
+	<p id="userResults" ></p> <!-- Accesses results with click -->
+    	</div>
 	
 	
 </div>
