@@ -45,6 +45,18 @@ The following code has been developed by students and/or researchers of the Fres
 
 /* detectVerticalSquash & drawImageIOSFix = are functions that are critical due to a flaw in the iPhone camera software that squishes any photos displayed on an HTML5 canvas element. https://github.com/stomita/ios-imagefile-megapixel
 */
+
+	
+   // Function to increment benign count
+    function benignAdd() {
+        benign_count = benign_count + 1;     
+    }
+
+    // Function to increment malignant count and display the alert
+    function malignantAdd() {
+        malignant_count = malignant_count + 1;
+         }
+
  function detectVerticalSquash(img) {
   var iw = img.naturalWidth, ih = img.naturalHeight;
   var canvas = document.createElement('canvas');
@@ -165,6 +177,55 @@ The following code has been developed by students and/or researchers of the Fres
          <p> Once you have uploaded an image, click the button below. </p>  <!-- Tells user to continue -->
 	<a href="#two" class="w3-btn w3-grey w3-round"> Continue</a> 
     	</div>
+
+	<div class="page" id="two">
+	   <h1>Question 1</h1>
+              </div>
+	<div class="w3-container w3-flat-carrot">
+	  <p>Do you use SPF daily?</p>
+                <a href="#three" onclick="benignAdd(); class="w3-btn w3-black"> Yes</a>
+                <a href="#three" onclick="malignantAdd();" class="w3-btn w3-black"> No</a>
+            </div>
+        
+       
+        <div class="page" id="three">
+            <div class="w3-container w3-flat-carrot">
+                <h1>Question 2</h1>
+            </div>
+            <div id="content3" class="w3-container">
+                <p>Have you been using a tanning bed?</p>
+                <a href="#four" onclick="malignantAdd();" class="w3-btn w3-black"> Yes</a>
+                <a href="#four" onclick="benignAdd();" class="w3-btn w3-black"> No</a>
+
+	<div class="page" id="four">
+            <div class="w3-container w3-flat-carrot">
+                <h1>Question 3</h1>
+            </div>
+            <div id="content3" class="w3-container">
+                <p>Does your mole have symmetry?</p>
+                <a href="#five" onclick="benignAdd();" class="w3-btn w3-black"> Yes</a>
+                <a href="#five" onclick="malignantAdd();" class="w3-btn w3-black"> No</a>
+	
+	<div class="page" id="five">
+            <div class="w3-container w3-flat-carrot">
+                <h1>Question 4</h1>
+            </div>
+            <div id="content3" class="w3-container">
+                <p>Does it look like your mole is evolving over this past month? ?</p>
+                <a href="#six" onclick="malignantAdd();" class="w3-btn w3-black"> Yes</a>
+                <a href="#six" onclick="benignAdd();" class="w3-btn w3-black"> No</a>
+
+	<div class="page" id="six">
+            <div class="w3-container w3-flat-carrot">
+                <h1>Question 5</h1>
+            </div>
+            <div id="content3" class="w3-container">
+                <p>Does your mole have a variety of colors? ?</p>
+                <a href="#results" onclick="malignantAdd();" class="w3-btn w3-black"> Yes</a>
+                <a href="#results" onclick="benignAdd();" class="w3-btn w3-black"> No</a>
+	
+	
+</div>
 	
 
     </div><!-- /content -->
